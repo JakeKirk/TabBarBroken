@@ -1,4 +1,6 @@
 # TabBarBroken
+Platform: Windows, 64 bit, Qt 5.13.1
+
 Demonstrates a 'dead' Qt TabButton TabBar (inactive? disabled?) upon SwipeView.setCurrentIndex()
 
 If you are on Page 1 and one presses 'Navigate to Page 4'
