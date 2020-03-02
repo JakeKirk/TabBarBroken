@@ -13,7 +13,11 @@ Page {
 
     Label {
         id: labelId
-        text: qsTr("You are on Page 2.  \nNote: if you press on the 'Navigate' button, you can't get back here, \n'Page 2' is a temporarily a dead button (but the rest all work and swipe to another page fixes it)")
+        text: qsTr("You are on Page 2.\n\n" +
+                   "Note: if one presses 'Navigate to Page 4',\n" +
+                   "  then one cannot get back here via the TabButton-TabBar, 'PAGE 2'\n\n" +
+                   "The 'PAGE 2' TabButton (TabBar?) is temporarily 'dead'?\n" +
+                   "(but other TabButtons all work and if one swipes over to another page and back, this fixes things!)")
         anchors.centerIn: parent
     }
 

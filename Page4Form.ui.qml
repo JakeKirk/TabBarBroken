@@ -12,7 +12,10 @@ Page {
     }
 
     Label {
-        text: qsTr("You are on the Auxillary Page 4.\nYou got here via swipe or Page 1 or Page 2 button press on 'Navigate to Page 4''")
+        text: qsTr("You got here either via swipe or via pressing the 'Page 1' or 'Page 2'\n"+
+                   " 'Navigate to Page 4' button.\n\n" +
+                   "*If you got here via 'Navigate to Page 4',\n"+
+                   " then the TabButton/TabBar is now broken/unresponsive.")
         anchors.centerIn: parent
     }
 }

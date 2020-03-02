@@ -5,7 +5,7 @@ ApplicationWindow {
     visible: true
     width: 640
     height: 480
-    title: qsTr("TabBarSwipeTest  - demo TabBar button is inactive upon SwipeView navigation")
+    title: qsTr("Demonstrates a 'dead' TabButton/TabBar (inactive? disabled?) upon SwipeView.setCurrentIndex()")
 
     SwipeView {
         id: swipeView
@@ -28,15 +28,14 @@ ApplicationWindow {
         }
 
         // index 3
-        // note: An "extra" auxillary Page, that one can only get to via pressing the "navigate" button.
+        // note: An this is an extra "auxillary" Page, that one can only get to via pressing the Page "navigate" button.
         Page4Form {
             id: page4Id
         }
     }
 
-    // Think of the TabBar as having "bookmarks" if you will, to navigate to the important "chapters" in our app.
-    // Our app could contain (many) additional auxillary Pages that don't directly use TabBar/TabButtons to navigate to.
     // In this example, swipeView contains an additional page not directly accessible via the TabBar buttons below.
+    // Think of the TabBar as having "bookmarks" if you will, to navigate to the important "chapters" in our app.
     footer: TabBar {
         id: tabBar
         currentIndex: swipeView.currentIndex
@@ -50,10 +49,12 @@ ApplicationWindow {
         TabButton {
             text: qsTr("Page 3")
         }
+
+        // note: auxlliary Page 4 doesn't use or have an corresponding TabButton.
     }
 
-    // note: PageIndex should probably be an enum, but for simplicity, since we know pages index from 0,
-    // then we know that Page3Form is at swipeView index 2.
+    // note: PageIndex should probably be an enum, but for simplicity, since we know total number of pages that index from 0-3 (four pages),
+    // then we know that the fourth page, Page4Form is at swipeView index 3.
     function setTabPageIndex( PageIndex )
     {
         // this allows us to get to other pages, without renaming/adding additional TabButtons.
