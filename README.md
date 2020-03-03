@@ -1,13 +1,9 @@
 # TabBarBroken
-Platform: Windows, 64 bit, Qt 5.13.1
+Platform: Windows, 64 bit, Qt 5.13.1 (and recent versions of Qt.)
 
-Demonstrates a 'dead' Qt TabButton TabBar (inactive? disabled?) upon SwipeView.setCurrentIndex()
+An implementation for when the # of Pages exceeds the number of TabButtons in a SwipeView.
 
-If you are on Page 1 and one presses 'Navigate to Page 4'
-Then one cannot get back to Page 1, via the TabButton-TabBar, 'PAGE 1'
-
-The 'PAGE 1' TabButton (TabBar?) is temporarily 'dead'?
-but other TabButtons all work and if one swipes over and back (to/from) another page, this fixes things!
+It was found that when using SwipeView.setCurrentIndex() that the TabBar.currentIndex could go out-of-range or more than the number of TabButtons created for the design.  This in turn seems to cause the TabButton to not pass on messages to the TabBar and to appear "dead" or inactive.  (but other TabButtons at indexes +/- work just fine... hmmm).
 
 see also:
 https://doc.qt.io/qt-5/qml-qtquick-controls2-container.html#managing-the-current-index
